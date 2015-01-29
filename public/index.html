@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WPM Challenge Real Time</title>
+    <script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      var socket = io();
+      socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+      });
+    </script>
+  </head>
+  <body>
+    Real Time server for <a href="http://wpmchallenge.com">WPM Challenge</a>
+  </body>
+</html>
